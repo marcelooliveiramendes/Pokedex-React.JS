@@ -1,8 +1,11 @@
 import React from 'react'
 
-function NavBar() {
+function NavBar({searchPokemon}) {
   return (
-    <div>NavBar</div>
+    <div>
+        <input type={'text'} onKeyDown={searchPokemon}/>
+        <button onClick={searchPokemon}>Next</button>
+    </div>
   )
 }
 
