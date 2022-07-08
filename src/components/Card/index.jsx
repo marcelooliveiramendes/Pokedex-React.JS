@@ -1,12 +1,13 @@
 
 import React from 'react'
-import { CardBox, PokeInfos, PokeTypes, Title, TypePoke } from '../../styles/Card'
+import { CardBox, PokeInfos, PokeTypes, Thumbnail, Title, TypePoke } from '../../styles/Card'
 
 
 function Card({props}) {
 
     let types = props.types
     let bgColor = '';
+    let bgTypeBoxColor = '';
 
     switch (props.types[0].type.name){
         case 'normal': 
@@ -79,7 +80,9 @@ function Card({props}) {
                         <TypePoke key={index}>{type.type.name}</TypePoke>
                     ))}
                 </PokeTypes>
+
             </PokeInfos>
+            <Thumbnail src={props.sprites.other.dream_world.front_default} alt={"Imagem do pokemon"}/>
         </CardBox>  
     )
 }

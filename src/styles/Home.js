@@ -12,4 +12,5 @@ export const Pokedex = styled.section`
     width: 70%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 `
