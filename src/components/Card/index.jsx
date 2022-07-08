@@ -1,10 +1,14 @@
 import React from 'react'
+import { CardBox } from '../../styles/Card'
+
 
 function Card({props}) {
     console.log(props)
 
     return (
-        <div>Card</div>
+        <CardBox>
+
+        </CardBox>
     )
 }
 
