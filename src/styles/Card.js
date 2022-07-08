@@ -9,6 +9,26 @@ export const CardBox = styled.div`
     margin:10px;
     background-color: ${(props) => props.backgroundColor};
     color: #fff;
+
+    &:hover{
+        transform: scale(1.03);
+
+        img{
+            transform: translateY(-20px);
+            animation: imageAnimation 1.7s infinite ease-in-out;
+        }
+
+    }
+    
+    @keyframes imageAnimation {
+        0%{
+            transform: translateY(0px);
+        }50%{
+            transform: translateY(-20px);
+        }100%{
+            transform: translateY(0px);
+        }
+    }
 `
 export const PokeInfos = styled.div`
     display: flex;
