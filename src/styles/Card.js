@@ -6,12 +6,14 @@ export const CardBox = styled.div`
     display: flex;
     justify-content: space-around;
     align-items: center;
+    border-radius: 10px;
     margin:10px;
     background-color: ${(props) => props.backgroundColor};
     color: #fff;
 
     &:hover{
         transform: scale(1.03);
+        transition: .6s;
 
         img{
             transform: translateY(-20px);
@@ -48,9 +50,12 @@ export const PokeTypes = styled.ul`
 `
 export const TypePoke = styled.li`
     text-transform: capitalize;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 600;
 
     &:nth-child(2){
-        margin-left: 20px;
+        margin-left: 10px;
     }
 `
 export const Thumbnail = styled.img`

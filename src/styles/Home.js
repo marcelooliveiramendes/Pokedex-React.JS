@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
     justify-content: center;
 `
 export const Pokedex = styled.section`
-    width: 70%;
+    width: 90%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

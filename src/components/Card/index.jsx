@@ -1,6 +1,7 @@
 
 import React from 'react'
 import { CardBox, PokeInfos, PokeTypes, Thumbnail, Title, TypePoke } from '../../styles/Card'
+import {Link} from "react-router-dom"
 
 
 function Card({props}) {
@@ -76,18 +77,20 @@ function Card({props}) {
     }
 
     return (
-        <CardBox onMouseEnter={mouseEffect} backgroundColor={bgColor}>
-            <PokeInfos>
-                <Title>{props.name}</Title>
-                <PokeTypes>
-                    {types.map((type, index)=>(
-                        <TypePoke key={index}>{type.type.name}</TypePoke>
-                    ))}
-                </PokeTypes>
+        <Link to={`pokemon/${props.name}`}>
+            <CardBox onMouseEnter={mouseEffect} backgroundColor={bgColor}>
+                <PokeInfos>
+                    <Title>{props.name}</Title>
+                    <PokeTypes>
+                        {types.map((type, index)=>(
+                            <TypePoke key={index}>{type.type.name}</TypePoke>
+                        ))}
+                    </PokeTypes>
 
-            </PokeInfos>
-            <Thumbnail src={props.sprites.other.dream_world.front_default} alt={"Imagem do pokemon"}/>
-        </CardBox>  
+                </PokeInfos>
+                <Thumbnail src={props.sprites.other.dream_world.front_default} alt={"Imagem do pokemon"}/>
+            </CardBox>  
+        </Link>
     )
 }
 
