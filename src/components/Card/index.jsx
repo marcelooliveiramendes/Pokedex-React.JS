@@ -71,14 +71,9 @@ function Card({props}) {
     }
 
 
-
-    const mouseEffect = () => {
-        console.log('olaaaaaaa');
-    }
-
     return (
         <Link to={`pokemon/${props.name}`}>
-            <CardBox onMouseEnter={mouseEffect} backgroundColor={bgColor}>
+            <CardBox backgroundColor={bgColor}>
                 <PokeInfos>
                     <Title>{props.name}</Title>
                     <PokeTypes>

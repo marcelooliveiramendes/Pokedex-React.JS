@@ -31,12 +31,7 @@ function Home() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [url]);
 
-    const searchPokemon = async (event) => {
-        const key = event.keyCode;
-        if(key === 13){
-            console.log('AAAAAAAAAAAAA');
-        }
-    }
+    
 
     useEffect(()=>{
         getAllPokemons()
@@ -44,7 +39,7 @@ function Home() {
 
     return (
         <Wrapper>
-            <NavBar searchPokemon={searchPokemon}/>
+            <NavBar/>
             <Pokedex>
                 {pokemons.map((pokemon, index) => (
                     <Card key={index} props={pokemon}/>
