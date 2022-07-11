@@ -16,7 +16,7 @@ function NavBar() {
   return (
       <Navbar>
         <Logo src={logo} alt={"Logo do pokedex"}/>
-        <SearchBox type={'text'} onKeyDown={searchPokemon}/>
+        <SearchBox type={'text'} placeholder={'Search'} onKeyDown={searchPokemon}/>
       </Navbar>
   )
 }
