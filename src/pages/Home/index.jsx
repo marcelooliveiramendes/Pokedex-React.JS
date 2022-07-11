@@ -2,7 +2,7 @@ import React from 'react'
 import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
 
-import { Pokedex, Wrapper } from '../../styles/Home';
+import { PaginationBtnLeft, PaginationBtnRight, Pokedex, Wrapper } from '../../styles/Home';
 import NavBar from '../../components/NavBar';
 import Card from '../../components/Card';
 import {BsArrowLeft, BsArrowRight}   from 'react-icons/bs';
@@ -43,13 +43,14 @@ function Home() {
         <Wrapper>
             <NavBar/>
             
-            <button><BsArrowLeft/></button>
-            <button><BsArrowRight/></button>
             
             <Pokedex>
                 {pokemons.map((pokemon, index) => (
-                    <Card key={index} props={pokemon}/>
+                        <Card key={index} props={pokemon}/>
                 ))}
+
+                <PaginationBtnLeft><BsArrowLeft/></PaginationBtnLeft>
+                <PaginationBtnRight><BsArrowRight/></PaginationBtnRight>
             </Pokedex>
         </Wrapper>
     )
