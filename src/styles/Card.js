@@ -17,7 +17,7 @@ export const CardBox = styled.div`
 
         img{
             transform: translateY(-20px);
-            animation: imageAnimation 1.7s infinite ease-in-out;
+            animation: imageAnimation .8s infinite ease-in-out;
         }
 
     }
@@ -26,7 +26,7 @@ export const CardBox = styled.div`
         0%{
             transform: translateY(0px);
         }50%{
-            transform: translateY(-20px);
+            transform: translateY(-10px);
         }100%{
             transform: translateY(0px);
         }

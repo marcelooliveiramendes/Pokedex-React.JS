@@ -1,4 +1,7 @@
 import React from 'react'
+import { Logo, Navbar, SearchBox } from '../../styles/Navbar';
+
+import logo from '../../img/logo.png'
 
 function NavBar() {
 
@@ -6,18 +9,15 @@ function NavBar() {
     const key = event.keyCode;
     const value = event.target.value;
     if(key === 13){
-        
-
         window.location.href = `/pokemon/${value}`;;
-      
     }
 }
 
   return (
-    <div>
-        <input type={'text'} onKeyDown={searchPokemon}/>
-        <button onClick={searchPokemon}>Next</button>
-    </div>
+      <Navbar>
+        <Logo src={logo} alt={"Logo do pokedex"}/>
+        <SearchBox type={'text'} onKeyDown={searchPokemon}/>
+      </Navbar>
   )
 }
 
