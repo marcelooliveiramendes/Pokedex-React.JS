@@ -1,9 +1,11 @@
 import React from 'react'
 import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
+
 import { Pokedex, Wrapper } from '../../styles/Home';
 import NavBar from '../../components/NavBar';
 import Card from '../../components/Card';
+import {BsArrowLeft, BsArrowRight}   from 'react-icons/bs';
 
 function Home() {
     const [url, setUrl] = useState('https://pokeapi.co/api/v2/pokemon?limit=20&offset=0')
@@ -40,6 +42,10 @@ function Home() {
     return (
         <Wrapper>
             <NavBar/>
+            
+            <button><BsArrowLeft/></button>
+            <button><BsArrowRight/></button>
+            
             <Pokedex>
                 {pokemons.map((pokemon, index) => (
                     <Card key={index} props={pokemon}/>

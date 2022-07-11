@@ -1,7 +1,10 @@
 import React from 'react'
 import { Logo, Navbar, SearchBox } from '../../styles/Navbar';
 
-import logo from '../../img/logo.png'
+import logo from '../../img/logo.png';
+
+
+
 
 function NavBar() {
 
