@@ -7,6 +7,7 @@ import {Link} from "react-router-dom"
 function Card({props}) {
 
     let types = props.types
+
     let bgColor = '';
 
     switch (props.types[0].type.name){
