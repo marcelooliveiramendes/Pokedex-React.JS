@@ -10,11 +10,16 @@ import {BsArrowLeft, BsArrowRight}   from 'react-icons/bs';
 function Home() {
     const [url, setUrl] = useState('https://pokeapi.co/api/v2/pokemon?limit=20&offset=0')
     const [pokemons, setPokemons] = useState([]);
+    const [prevPage, setPrevPage] = useState('')
+    const [nextPage, setNextPage] = useState('')
 
     const getAllPokemons = useCallback(async () => {
         const data = await axios.get(url)
             .then((response)=>{return response.data})
             .catch((err)=>{return console.log("Falha ao requisitar dados! \n\n\n" + err)})
+
+        setPrevPage(await data.previous)
+        setNextPage(await data.next)
 
         const getPokemonsInfo = async (result) => {
             result.forEach(async (pokemon) => {
@@ -28,7 +33,7 @@ function Home() {
 
         getPokemonsInfo(data.results)
         setPokemons([])
-        console.log(await pokemons)
+        console.log(data);
         
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [url]);
@@ -38,6 +43,13 @@ function Home() {
     useEffect(()=>{
         getAllPokemons()
     }, [getAllPokemons])
+
+    const prevPag = () => {
+        setUrl(prevPage)
+    }
+    const nextPag = () => {
+        setUrl(nextPage)
+    }   
 
     return (
         <Wrapper>
@@ -49,8 +61,10 @@ function Home() {
                         <Card key={index} props={pokemon}/>
                 ))}
 
-                <PaginationBtnLeft><BsArrowLeft/></PaginationBtnLeft>
-                <PaginationBtnRight><BsArrowRight/></PaginationBtnRight>
+                {prevPage !== null &&(
+                    <PaginationBtnLeft onClick={prevPag}><BsArrowLeft/></PaginationBtnLeft>
+                )}
+                <PaginationBtnRight onClick={nextPag}><BsArrowRight/></PaginationBtnRight>
             </Pokedex>
         </Wrapper>
     )
