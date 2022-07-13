@@ -2,10 +2,9 @@ import React from 'react'
 import { Link, useParams } from 'react-router-dom'
 import axios from 'axios'
 
-import { BackBtn, InfoBox, Wrapper } from '../../styles/PokemonInfo'
-import { useCallback } from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
+import { BackBtn, InfoBox, PokemonContent, PokemonThumbnail, Thumbnail, Wrapper } from '../../styles/PokemonInfo'
+import { useCallback, useState, useEffect} from 'react';
+import { BsArrowReturnLeft } from "react-icons/bs";
 
 function PokemonInfo() {
   const params = useParams();
@@ -21,11 +20,11 @@ function PokemonInfo() {
 
         setPokemon(data)
         setColor(data.types[0].type.name)
-        console.log(data.types[0].type.name);
+        console.log(pokemon);
+
       // eslint-disable-next-line react-hooks/exhaustive-deps
       }, [params])
       
-      console.log(color);
       switch (color){
           case 'normal': 
               setColor("#c4c3c3") 
@@ -93,15 +92,22 @@ function PokemonInfo() {
 
   return (
     <Wrapper bgColor={color}>
-      <Link to="/">
         <BackBtn>
-          
+            <Link to="/">
+                <button>
+                    <BsArrowReturnLeft className='arrow'/> Voltar
+                </button>
+            </Link>
         </BackBtn>
-      </Link>
-        
-      <InfoBox>
+        <InfoBox>
+            <PokemonThumbnail>
+                <Thumbnail src={pokemon.sprites.other.dream_world.front_default}/>
+                <h2>{pokemon.name}</h2>
+            </PokemonThumbnail>
+            <PokemonContent>
 
-      </InfoBox>
+            </PokemonContent>
+        </InfoBox>
 
     </Wrapper>
   )
