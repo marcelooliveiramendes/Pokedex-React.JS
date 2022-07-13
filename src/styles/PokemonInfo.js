@@ -37,7 +37,7 @@ export const BackBtn = styled.div`
 export const InfoBox = styled.section`
     width: 70%;
     height: 60%;
-    background-color: #fff;
+    background-color: #e8e8e8;
     border-radius: 20px;
     display: flex;
 `
@@ -48,6 +48,8 @@ export const PokemonThumbnail = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #ffffff;
+    border-radius: 20px;
 `
 export const PokemonContent = styled.div`
     width: 50%;
@@ -55,4 +57,10 @@ export const PokemonContent = styled.div`
 
 export const Thumbnail = styled.img`
     width: 200px;
+`
+export const PokemonName = styled.h2`
+    font-size: 26px;
+    text-transform: capitalize;
+    margin-top: 30px;
+    border-radius: 30px;
 `

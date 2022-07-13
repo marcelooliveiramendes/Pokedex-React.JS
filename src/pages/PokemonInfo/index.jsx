@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, useParams } from 'react-router-dom'
 import axios from 'axios'
 
-import { BackBtn, InfoBox, PokemonContent, PokemonThumbnail, Thumbnail, Wrapper } from '../../styles/PokemonInfo'
+import { BackBtn, InfoBox, PokemonContent, PokemonName, PokemonThumbnail, Thumbnail, Wrapper } from '../../styles/PokemonInfo'
 import { useCallback, useState, useEffect} from 'react';
 import { BsArrowReturnLeft } from "react-icons/bs";
 
@@ -100,13 +100,18 @@ function PokemonInfo() {
             </Link>
         </BackBtn>
         <InfoBox>
-            <PokemonThumbnail>
-                <Thumbnail src={pokemon.sprites.other.dream_world.front_default}/>
-                <h2>{pokemon.name}</h2>
-            </PokemonThumbnail>
-            <PokemonContent>
+            {pokemon != "" &&(
+            <>
+                <PokemonThumbnail>
+                    <Thumbnail src={pokemon.sprites.other.dream_world.front_default}/>
+                    <PokemonName>{pokemon.name}</PokemonName>
+                </PokemonThumbnail>
+                <PokemonContent>
 
-            </PokemonContent>
+                </PokemonContent>
+                
+            </>
+            )}
         </InfoBox>
 
     </Wrapper>
