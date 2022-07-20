@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, useParams } from 'react-router-dom'
 import axios from 'axios'
 
-import { BackBtn, InfoBox, PokemonContent, PokemonName, PokemonThumbnail, Thumbnail, Wrapper } from '../../styles/PokemonInfo'
+import { BackBtn, InfoBox, PokemonContent, PokemonName, PokemonThumbnail, PokeStats, Thumbnail, Wrapper } from '../../styles/PokemonInfo'
 import { useCallback, useState, useEffect} from 'react';
 import { BsArrowReturnLeft } from "react-icons/bs";
 
@@ -21,6 +21,7 @@ function PokemonInfo() {
         setPokemon(data)
         setColor(data.types[0].type.name)
         console.log(pokemon);
+
 
       // eslint-disable-next-line react-hooks/exhaustive-deps
       }, [params])
@@ -107,10 +108,15 @@ function PokemonInfo() {
                     <PokemonName>{pokemon.name}</PokemonName>
                 </PokemonThumbnail>
                 <PokemonContent>
-
+                    {pokemon.stats.map((status, index)=>(
+                        <PokeStats key={index}>
+                            <h3>{status.stat.name}</h3>
+                            <p>{status.base_stat}</p>
+                        </PokeStats>
+                    ))}
                 </PokemonContent>
-                
             </>
+
             )}
         </InfoBox>
 

@@ -37,7 +37,7 @@ export const BackBtn = styled.div`
 export const InfoBox = styled.section`
     width: 70%;
     height: 60%;
-    background-color: #e8e8e8;
+    background-color: #ededed;
     border-radius: 20px;
     display: flex;
 `
@@ -51,9 +51,6 @@ export const PokemonThumbnail = styled.div`
     background-color: #ffffff;
     border-radius: 20px;
 `
-export const PokemonContent = styled.div`
-    width: 50%;
-`
 
 export const Thumbnail = styled.img`
     width: 200px;
@@ -63,4 +60,27 @@ export const PokemonName = styled.h2`
     text-transform: capitalize;
     margin-top: 30px;
     border-radius: 30px;
+`
+export const PokemonContent = styled.div`
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 10px;
+`
+export const PokeStats = styled.div`
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #d4d4d4;
+
+    h3{
+        font-size: 1.2rem;
+        text-transform: capitalize;
+    }
+    p{
+        font: 1rem;
+    }
 `
