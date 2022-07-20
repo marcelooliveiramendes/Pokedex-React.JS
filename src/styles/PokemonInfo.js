@@ -69,6 +69,20 @@ export const PokemonContent = styled.div`
     align-items: center;
     padding: 20px 10px;
 `
+
+export const PokeCarac = styled.div`
+    width: 70%;
+    margin-bottom: 30px;
+
+    h3{
+        font-size: 1.2rem;
+        text-transform: capitalize;
+    }
+    p{
+        font: 1rem;
+    }  
+`
+
 export const PokeStats = styled.div`
     width: 70%;
     display: flex;
