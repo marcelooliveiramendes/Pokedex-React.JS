@@ -75,7 +75,7 @@ function PokemonInfo() {
               setColor("#067abe") 
               break;   
           case 'dark': 
-              setColor("##5a5465") 
+              setColor("#5a5465") 
               break;
           case 'fairy': 
               setColor("#ed93e2") 

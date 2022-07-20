@@ -60,7 +60,7 @@ function Card({props}) {
             bgColor = "#067abe"
             break;   
         case 'dark': 
-            bgColor = "##5a5465"
+            bgColor = "#5a5465"
             break;
         case 'fairy': 
             bgColor = "#ed93e2"
