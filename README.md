@@ -1,5 +1,4 @@
-# Pokedex Atualizado - React.JS (Quase Finalizado)
-
+# Pokedex Atualizado - React.JS
 <h1>Tela Inicial</h1>
 <img src="https://user-images.githubusercontent.com/48383295/180068841-26a46924-cde6-4e22-bbc3-933c36fee632.jpg" alt="Imagem da tela inicial"/>
 
